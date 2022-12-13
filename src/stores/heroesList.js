@@ -12,13 +12,8 @@ export const useHeroesList = defineStore({
             .then(data => {
                 this.heroesList = data
             })
-            console.log(this.heroesList);
-            // 
-            // .catch(error => {
-            //     console.log(error)
-            // })
-            // .finally(()=> {
-            // })
+            console.log(this.heroesList[0].name);
+            
         },
         getHeroById (id) {
             return this.heroesList.find(heroe => heroe.id === id)
