@@ -1,26 +1,28 @@
 import { defineStore } from 'pinia'
 
 export const useHeroesList = defineStore({
-    id: 'SAUL',
+    id: 'heroes',
     state: () => ({
-        heroes: []
+        heroesList: []
     }),
     actions: {
         async fetchHeroes () {
             await fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json')
             .then(res => res.json())
             .then(data => {
-                this.heroes = data
+                this.heroesList = data
             })
-            .catch(error => {
-                console.log(error)
-            })
-            .finally(()=> {
-                console.log("Heroes cargados")
-            })
+            console.log(this.heroesList);
+            // 
+            // .catch(error => {
+            //     console.log(error)
+            // })
+            // .finally(()=> {
+            // })
         },
         getHeroById (id) {
-            return this.heroes.find(heroe => heroe.id === id)
+            return this.heroesList.find(heroe => heroe.id === id)
         }
     }
+    
 })
