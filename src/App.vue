@@ -11,12 +11,11 @@ import HomeViewVue from './views/HomeView.vue';
   </header>
 
       <nav>
-        <RouterLink to="/">Superhero List</RouterLink>
+        <RouterLink class="active" to="/">Superhero List</RouterLink>
         <RouterLink to="/about">My Favorite Superheroes</RouterLink>
       </nav>
 
       <RouterView />
-      
 </template>
 
 <style scoped>
@@ -41,6 +40,38 @@ h1 {
   font-weight: normal;
   position: absolute;
   top: 13vw;
-  left: 33vw;}
+  left: 33vw;
+}
+ 
+nav {
+  font-family: "Roboto",sans-serif;
+  display: flex;
+  justify-content: end;
+}
+
+a {
+  text-decoration: none;
+  color: #FF5E00;
+  font-weight: bold;
+  display: inline-block;
+  height: 47px;
+  padding: 0 20px;
+  line-height: 47px;
+  border: 1px solid #343FE1;
+  background-color: #343FE1;
+
+}
+
+
+a:hover {
+  color: #343FE1;
+  background-color: #fff;
+}
+
+.active {
+  color: #343FE1;
+  background-color: #fff;
+}
+
 
 </style>
