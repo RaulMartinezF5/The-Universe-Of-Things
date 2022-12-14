@@ -12,7 +12,7 @@ export const useHeroesList = defineStore({
             .then(data => {
                 this.heroesList = data
             })
-            console.log(this.heroesList[0].name);
+            console.log(this.heroesList[9].images.lg);
             
         },
         getHeroById (id) {

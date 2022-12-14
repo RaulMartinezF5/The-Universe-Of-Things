@@ -20,6 +20,9 @@ const getHeroes = async () => {
 
 <template>
 
+
+
+
 </template>
 
 <style scoped>
