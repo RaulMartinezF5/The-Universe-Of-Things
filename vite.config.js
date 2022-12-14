@@ -14,5 +14,8 @@ export default defineConfig({
   test:{
     globals:true,
     enviroment:'jsdom',
+  },
+  build: {
+    outDir: 'docs'
   }
 })
