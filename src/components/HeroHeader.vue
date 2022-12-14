@@ -28,7 +28,7 @@ h1 {
   left: 33vw;
 }
 
-img {
+header img {
   width: 28%;
   margin: 8px 0 0 53px;
 }

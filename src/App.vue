@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HeroHeaderVue from './components/HeroHeader.vue';
+import HeroFooterVue from './components/HeroFooter.vue';
 
 </script>
 
@@ -14,6 +15,7 @@ import HeroHeaderVue from './components/HeroHeader.vue';
   </nav>
 
   <RouterView />
+  <HeroFooterVue></HeroFooterVue>
 </template>
 
 <style scoped>

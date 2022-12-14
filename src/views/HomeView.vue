@@ -1,4 +1,5 @@
 <script setup>
+import HeroPaginationVue from '../components/HeroPagination.vue'
 </script>
 
 <template>
@@ -41,6 +42,7 @@
         </li>
       </ul>
     </section>
+    <HeroPaginationVue></HeroPaginationVue>
   </main>
 </template>
 
