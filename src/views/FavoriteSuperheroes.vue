@@ -4,7 +4,7 @@ import HeroPaginationVue from '../components/HeroPagination.vue'
 
 <template>
   <main>
-    <h2>Superhero List</h2>
+    <h2>My Favorite Superheroes</h2>
     <section>
       <ul>
         <li>
@@ -18,6 +18,10 @@ import HeroPaginationVue from '../components/HeroPagination.vue'
               dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utLorem ipsum dolor sit
               amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utLorem ipsum dolor sit amet,
               consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+          <div id="valuationStars">
+Estrellas
+          </div>
+          <button>Modify</button>
           </div>
         </li>
         <li>
@@ -88,29 +92,47 @@ img {
 h3 {
   font-size: 16px;
   color: #ff5e00;
-  margin: 10px 0 15px 10px;
-}
-
-h3 {
   text-transform: uppercase;
+  margin-bottom: 4px;
+  
 }
 
-p {
-  margin: 0 10px 15px 10px;
-  color: black;
-  font-family: "Roboto";
-}
+
 
 .iconFavorite {
   width: 22px;
   position: absolute;
   right: 10px;
-  top: 2px;
-
+  top: 12px;
 }
 
 .contentHero {
   position: relative;
+  padding: 20px;
+  
+}
+
+p {
+  color: black;
+  font-family: "Roboto";
+}
+
+button {
+    display: inline-block;
+    background-color: #ff9801;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    border: 3px solid #ff9801;
+    width: 100%;
+    
+
+}
+button:hover {
+    border: 3px solid #ff9801;
+    background-color: #fff;
+    color: #ff9801;
 }
 
 @media (max-width:900px) {
@@ -120,4 +142,6 @@ p {
   }
 
 }
+
+
 </style>
