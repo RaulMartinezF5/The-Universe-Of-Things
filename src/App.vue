@@ -3,8 +3,10 @@ import { RouterLink, RouterView } from 'vue-router'
 import HomeViewVue from './views/HomeView.vue';
 import { onBeforeMount, ref} from 'vue'
 import { useHeroesList} from '@/stores/heroesList.js'
+import  HeroeItem from '@/components/HeroeItem.vue'
+import PRUEBAVISTA from './views/PRUEBAVISTA.vue';
 
-const heroesList = useHeroesList()
+const heroeList = useHeroesList()
 
 onBeforeMount(() => {
   getHeroes()
@@ -22,19 +24,26 @@ const getHeroes = async () => {
 
 <template>
 
+    <!-- <header> -->
+    <!-- <img src="./assets/img/superheroe-header-1.png" alt ="The Universe Of Things"> -->
+    <!-- <h1>The Universe Of Things</h1> -->
+  <!-- </header> -->
 
+      <!-- <nav> -->
+        <!-- <RouterLink class="active" to="/">Superhero List</RouterLink> -->
+        <!-- <RouterLink to="/about">My Favorite Superheroes</RouterLink> -->
+      <!-- </nav> -->
 
-    <header>
-    <img src="./assets/img/superheroe-header-1.png" alt ="The Universe Of Things">
-    <h1>The Universe Of Things</h1>
-  </header>
+      <!-- <RouterView /> -->
+      <!-- <div class="list" v-for="heroe in heroeList.heroes"> -->
+        <!-- <HeroeItem -->
+        <!-- :id = "heroe.id"  -->
+        <!-- :name = "heroe.name"  -->
+        <!-- :powerstats = "heroe.powerstats" -->
+        <!-- /> -->
+      <!-- </div> -->
 
-      <nav>
-        <RouterLink class="active" to="/">Superhero List</RouterLink>
-        <RouterLink to="/about">My Favorite Superheroes</RouterLink>
-      </nav>
-
-      <RouterView />
+      <PRUEBAVISTA />
 </template>
 
 <style scoped>

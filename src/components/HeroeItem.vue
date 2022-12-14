@@ -20,10 +20,9 @@ const props = defineProps({
    }
 
 })
-
-
-
-
-
-
 </script>
+<template>
+   <div>
+      <h4>{{name}}</h4>
+   </div>
+</template>
