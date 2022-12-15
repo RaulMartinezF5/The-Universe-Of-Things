@@ -37,7 +37,11 @@ const getHeroes = async () => {
 
   <RouterView />
   <div class="list" v-for="heroe in heroesStore.heroesList">
-    <HeroeItem :id="heroe.id" :name="heroe.name" :powerstats="heroe.powerstats" />
+    <HeroeItem 
+      :id="heroe.id" 
+      :name="heroe.name"
+      :images="heroe.images" 
+      :powerstats="heroe.powerstats" />
   </div>
 
   <PRUEBAVISTA />

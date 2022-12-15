@@ -1,5 +1,5 @@
 <script setup>
-// import TheWelcome from '../components/TheWelcome.vue'
+  import HeroeItemVue from '../components/HeroeItem.vue';
 </script>
 
 <template>
@@ -8,7 +8,7 @@
    <section>
    <ul>
      <li>
-      <figure>
+      <figure> 
         <img src="../assets/img/1-a-bomb.jpg" alt="1 A Bomb">
       </figure>
       <div class="contentHero">
