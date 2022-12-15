@@ -88,15 +88,14 @@ img {
 h3 {
   font-size: 16px;
   color: #ff5e00;
-  margin: 10px 0 15px 10px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
 }
 
 h3 {
-  text-transform: uppercase;
 }
 
 p {
-  margin: 0 10px 15px 10px;
   color: black;
   font-family: "Roboto";
 }
@@ -105,12 +104,14 @@ p {
   width: 22px;
   position: absolute;
   right: 10px;
-  top: 2px;
+  top: 14px;
 
 }
 
 .contentHero {
   position: relative;
+  padding: 20px;
+
 }
 
 @media (max-width:900px) {

@@ -28,6 +28,10 @@ nav {
   justify-content: end;
   position: sticky;
   top: 0;
+  background: linear-gradient(90deg, #000986 10%, #343FE1 90%);
+  z-index: 10000;
+  margin-bottom: 50px;
+
 }
 
 a {
@@ -38,8 +42,6 @@ a {
   height: 47px;
   padding: 0 20px;
   line-height: 47px;
-  border: 1px solid #343FE1;
-  background-color: #343FE1;
 }
 
 nav a:hover,
