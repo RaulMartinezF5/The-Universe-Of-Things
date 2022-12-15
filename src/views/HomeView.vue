@@ -12,7 +12,8 @@ import HeroPaginationVue from '../components/HeroPagination.vue'
             <img src="../assets/img/1-a-bomb.jpg" alt="1 A Bomb">
           </figure>
           <div class="contentHero">
-            <img src="../assets/img/favorite-icon.png" alt="Favorite" class="iconFavorite">
+            <p class="myFavoriteSuperhero">&#10084;</p>
+
             <h3>1-a-bomb</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Lorem ipsum
               dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utLorem ipsum dolor sit
@@ -90,9 +91,17 @@ h3 {
   color: #ff5e00;
   text-transform: uppercase;
   margin-bottom: 4px;
+  margin-top: -24px;
 }
 
-h3 {
+.myFavoriteSuperhero {
+  color: gray;
+  text-align: right;
+  font-size: 24px;
+}
+
+.myFavoriteSuperhero:hover {
+  color: #ff2826;
 }
 
 p {
