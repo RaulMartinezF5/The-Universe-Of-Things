@@ -1,2 +1,2 @@
-export let saludo = "hola mundo"
+export let saludo = "Esto es un mensaje desde prueba.js"
 

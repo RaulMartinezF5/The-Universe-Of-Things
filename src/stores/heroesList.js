@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const useHeroesList = defineStore({
     id: 'heroes',
     state: () => ({
-        heroesList: []
+       heroesList: []
     }),
     actions: {
         async fetchHeroes () {
@@ -12,7 +12,6 @@ export const useHeroesList = defineStore({
             .then(data => {
                 this.heroesList = data
             })
-            console.log(this.heroesList[9].images.lg);
             
         },
         getHeroById (id) {
