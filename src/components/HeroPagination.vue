@@ -1,13 +1,11 @@
-<script setup></script>
-
 <template>
     <section>
-    <button>First</button>
-    <button>Prev</button>
-    <button>1</button>
-    <button>Next</button>
-    <button>Last</button>
-</section>
+        <button>First</button>
+        <button>Prev</button>
+        <button>1</button>
+        <button>Next</button>
+        <button>Last</button>
+    </section>
 </template>
 
 <style scope>
@@ -20,6 +18,7 @@ button {
     font-weight: bold;
     border: 3px solid #ff9801;
 }
+
 button:hover {
     border: 3px solid #ff9801;
     background-color: #fff;
