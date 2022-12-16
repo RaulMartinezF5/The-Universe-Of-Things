@@ -25,7 +25,10 @@ const props = defineProps({
    <div>
       <h4>{{name}}</h4>
       <h4>{{id}}</h4>
-      <!-- <h4>{{powerstats}}</h4> -->
+      <div class="powerstats" v-for="power in powerstats">
+      <h4>{{power}}</h4>
+      </div>
       <img v-bind:src=images.sm>
+      
    </div>
 </template>
