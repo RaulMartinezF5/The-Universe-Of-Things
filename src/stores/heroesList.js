@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const useHeroesList = defineStore({
     id: 'heroes',
     state: () => ({
-       heroesList: []
+        heroesList: []
     }),
     actions: {
         async fetchHeroes () {
@@ -20,3 +20,14 @@ export const useHeroesList = defineStore({
     }
     
 })
+
+
+
+
+
+
+
+
+
+
+

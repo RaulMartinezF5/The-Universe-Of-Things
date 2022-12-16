@@ -5,7 +5,7 @@ import HeroFooterVue from './components/HeroFooter.vue';
 import { onBeforeMount, ref } from 'vue'
 import { useHeroesList } from '@/stores/heroesList.js'
 import HeroeItem from '@/components/HeroeItem.vue'
-import PRUEBAVISTA from './views/PRUEBAVISTA.vue';
+
 
 const heroesStore = useHeroesList()
 
@@ -21,7 +21,7 @@ const getHeroes = async () => {
   console.log(heroesStore.heroesList);
 }
 
-// console.log(useHeroesList);
+console.log(useHeroesList);
 </script>
 
 <template>
@@ -51,7 +51,7 @@ const getHeroes = async () => {
       :powerstats="heroe.powerstats" />
   </div>
 
-  <PRUEBAVISTA />
+
   <RouterView />
   <HeroFooterVue></HeroFooterVue>
 </template>
