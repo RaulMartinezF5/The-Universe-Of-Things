@@ -1,8 +1,7 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
 import HeroHeaderVue from './components/HeroHeader.vue';
 import HeroFooterVue from './components/HeroFooter.vue';
-import { onBeforeMount, ref } from 'vue'
+import HeroNavVue from './components/HeroNav.vue';import { onBeforeMount, ref } from 'vue'
 import { useHeroesList } from '@/stores/heroesList.js'
 import HeroeItem from '@/components/HeroeItem.vue'
 
@@ -26,90 +25,9 @@ console.log(useHeroesList);
 
 <template>
   <HeroHeaderVue></HeroHeaderVue>
-
-  <header>
-    <img src="./assets/img/superheroe-header-1.png" alt="The Universe Of Things">
-    <h1>The Universe Of Things</h1>
-  </header>
-
-  <nav>
-    <RouterLink to="/">Superhero List</RouterLink>
-    <RouterLink to="/favoritesuperheroes">My Favorite Superheroes</RouterLink>
-    <RouterLink to="/addhero" v-if="this.$route.path !== '/'">Add Your Heroes</RouterLink>
-  </nav>
-  <nav>
-    <RouterLink class="active" to="/">Superhero List</RouterLink>
-    <RouterLink to="/about">My Favorite Superheroes</RouterLink>
-  </nav>
-
-  <RouterView />
-  <div class="list" v-for="heroe in heroesStore.heroesList">
-    <HeroeItem 
-      :id="heroe.id" 
-      :name="heroe.name"
-      :images="heroe.images" 
-      :powerstats="heroe.powerstats" />
-  </div>
-
-
-  <RouterView />
+  <HeroNavVue></HeroNavVue>
   <HeroFooterVue></HeroFooterVue>
 </template>
 
-<style scoped>
-header {
-  background: linear-gradient(90deg, #000986 10%, #343FE1 90%);
-  position: relative;
-  width: 100%;
-  height: 33.3vw;
 }
 
-img {
-  width: 28%;
-  margin: 8px 0 0 53px;
-
-}
-
-h1 {
-  font-family: "Zen Dots", sans-serif;
-  font-size: 7.7vw;
-  color: #fff;
-  font-weight: normal;
-  position: absolute;
-  top: 13vw;
-  left: 33vw;
-}
-
-nav {
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  justify-content: end;
-  position: sticky;
-  top: 0;
-  background: linear-gradient(90deg, #000986 10%, #343FE1 90%);
-  z-index: 10000;
-  margin-bottom: 50px;
-
-}
-
-a {
-  text-decoration: none;
-  color: #FF5E00;
-  font-weight: bold;
-  display: inline-block;
-  height: 47px;
-  padding: 0 20px;
-  line-height: 47px;
-}
-
-nav a:hover,
-nav a.router-link-exact-active:hover {
-  color: #343FE1;
-  background-color: #fff;
-}
-
-nav a.router-link-exact-active {
-  color: #343FE1;
-  background-color: #fff;
-}
-</style>
