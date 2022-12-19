@@ -1,13 +1,8 @@
-<script setup>
-</script>
-
 <template>
-
   <header>
     <img src="../assets/img/superheroe-header-1.png" alt="The Universe Of Things">
     <h1>The Universe Of Things</h1>
   </header>
-
 </template>
 
 <style scope>

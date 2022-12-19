@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <footer>
     <p>Copyright 2022</p>
