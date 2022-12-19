@@ -1,10 +1,16 @@
 <script setup>
-
+const props = defineProps({
+    name: {
+        type: String, 
+        default: null
+    }
+})
 </script>
 
 
 <template>
-     <input type="text">
+     <input type="text" :id=name> 
+    
 
 </template>
 
