@@ -1,9 +1,19 @@
+<script setup>
+import HeroStarsEvaluationVue from './HeroStarsEvaluation.vue';
+import HeroModifyButtonVue from './HeroModifyButton.vue';
+
+function showFileHero() {
+  const visorFile = document.getElementById('visor')
+  visorFile.classList.remove('invisible')
+}
+
+</script>
 <template>
     <li>
         <figure>
             <img src="../assets/img/1-a-bomb.jpg" alt="1 A Bomb">
             <div class="openHeroFile">
-                <img src="../assets/img/arrowcircleup.png" alt="Superhero File">
+                <img src="../assets/img/arrowcircleup.png" alt="Superhero File"  @click="showFileHero()">
             </div>
         </figure>
         <div class="contentHero">
@@ -13,22 +23,9 @@
                 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utLorem ipsum dolor sit
                 amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utLorem ipsum dolor sit amet,
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
-                <div id="valuationStars">
-              <form action="" method="post">
-                <!-- <p>estrellas: 3</p> -->
-                <p class="clasificacion">
-                  <input id="radio1" type="radio" name="estrellas" value="5"><label for="radio1">&#9733;</label>
-                  <input id="radio2" type="radio" name="estrellas" value="4"><label for="radio2">&#9733;</label>
-                  <input id="radio3" type="radio" name="estrellas" value="3"><label for="radio3">&#9733;</label>
-                  <input id="radio4" type="radio" name="estrellas" value="2"><label for="radio4">&#9733;</label>
-                  <input id="radio5" type="radio" name="estrellas" value="1"><label for="radio5">&#9733;</label>
-                </p>
-                <!-- <p><input type="submit" value="submit" name="submit" /></p> -->
-              </form>
+                <HeroStarsEvaluationVue v-if="this.$route.path !== '/'"></HeroStarsEvaluationVue>
+                <HeroModifyButtonVue v-if="this.$route.path !== '/'"></HeroModifyButtonVue>
           </div>
-            <button>Modify Superhero</button>
-          </div>
-        
     </li>
 </template>
 
@@ -89,63 +86,7 @@ p {
 
 }
 
-form {
-  width: 100%;
-  margin: 20px 0;
-}
 
-form p,
-form input[type="submit"] {
-  text-align: center;
-  font-size: 20px;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-label {
-  color: grey;
-  font-size: 32px;
-
-}
-
-label:hover {
-  cursor: pointer;
-}
-
-.clasificacion {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-}
-
-label:hover,
-label:hover~label {
-  color: orange;
-}
-
-input[type="radio"]:checked~label {
-  color: orange;
-}
-
-button {
-    display: inline-block;
-    background-color: #ff9801;
-    padding: 10px;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: bold;
-    border: 3px solid #ff9801;
-    width: 100%;
-    
-
-}
-
-button:hover {
-    border: 3px solid #ff9801;
-    background-color: #fff;
-    color: #ff9801;
-}
 
 .openHeroFile {
     position: absolute;
