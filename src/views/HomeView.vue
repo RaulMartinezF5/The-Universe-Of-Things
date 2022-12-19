@@ -1,8 +1,8 @@
 <script setup>
-import HeroeItemVue from '../components/HeroeItem.vue';
 import HeroPaginationVue from '../components/HeroPagination.vue'
 import HeroCardVue from '../components/HeroCard.vue';
 import HeroFileVue from '../components/HeroFile.vue';
+import HeroeItem from '../components/HeroeItem.vue';
 </script>
 
 <template>
@@ -12,6 +12,7 @@ import HeroFileVue from '../components/HeroFile.vue';
     <section>
       <ul>
         <HeroCardVue></HeroCardVue>
+        <HeroeItem></HeroeItem>
       </ul>
     </section>
     <HeroPaginationVue></HeroPaginationVue>

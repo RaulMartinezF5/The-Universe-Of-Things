@@ -1,6 +1,4 @@
 <script setup>
-import ButtonAddFavourites from './ButtonAddFavourites.vue';
-
 
 const props = defineProps({
    id: {
@@ -31,6 +29,6 @@ const props = defineProps({
       <h4>{{power}}</h4>
       </div>
       <img v-bind:src=images.sm>
-      <ButtonAddFavourites />
+      
    </div>
 </template>

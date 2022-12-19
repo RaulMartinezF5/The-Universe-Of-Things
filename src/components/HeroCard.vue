@@ -1,4 +1,9 @@
+<script setup>
+
+</script>
+
 <template>
+
     <li>
         <figure>
             <img src="../assets/img/1-a-bomb.jpg" alt="1 A Bomb">

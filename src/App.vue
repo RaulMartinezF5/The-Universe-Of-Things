@@ -3,7 +3,9 @@ import HeroHeaderVue from './components/HeroHeader.vue';
 import HeroFooterVue from './components/HeroFooter.vue';
 import HeroNavVue from './components/HeroNav.vue';import { onBeforeMount, ref } from 'vue'
 import { useHeroesList } from '@/stores/heroesList.js'
-import HeroeItem from '@/components/HeroeItem.vue'
+import HeroeItemVue from './components/HeroeItem.vue';
+
+
 
 
 const heroesStore = useHeroesList()
@@ -26,6 +28,7 @@ console.log(useHeroesList);
 <template>
   <HeroHeaderVue></HeroHeaderVue>
   <HeroNavVue></HeroNavVue>
+  <HeroeItemVue></HeroeItemVue>
   <HeroFooterVue></HeroFooterVue>
 </template>
 
