@@ -9,13 +9,13 @@ const props = defineProps({
 
 
 <template>
-     <input type="text" :id=name> 
+     <textarea :id=name rows="4"></textarea>
     
 
 </template>
 
 <style scoped>
-input {
+TextArea {
     border: 1px solid #343fe1;
     border-radius: 5px;
     padding: 4px;
@@ -24,7 +24,9 @@ input {
     width: 100%;
 }
 
-
+legend {
+    font-weight: bold;
+}
 
 
 
