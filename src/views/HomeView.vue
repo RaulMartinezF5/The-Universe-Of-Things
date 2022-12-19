@@ -6,6 +6,7 @@ import HeroPaginationVue from '../components/HeroPagination.vue'
 <template>
   <main>
     <h2>Superhero List</h2>
+    
     <section>
       <ul>
         <li>
@@ -14,6 +15,7 @@ import HeroPaginationVue from '../components/HeroPagination.vue'
           </figure>
           <div class="contentHero">
             <p class="myFavoriteSuperhero">&#10084;</p>
+           
 
             <h3>1-a-bomb</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Lorem ipsum

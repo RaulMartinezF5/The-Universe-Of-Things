@@ -26,20 +26,10 @@ console.log(useHeroesList);
 
 <template>
   <HeroHeaderVue></HeroHeaderVue>
-
-  <header>
-    <img src="./assets/img/superheroe-header-1.png" alt="The Universe Of Things">
-    <h1>The Universe Of Things</h1>
-  </header>
-
   <nav>
     <RouterLink to="/">Superhero List</RouterLink>
     <RouterLink to="/favoritesuperheroes">My Favorite Superheroes</RouterLink>
     <RouterLink to="/addhero" v-if="this.$route.path !== '/'">Add Your Heroes</RouterLink>
-  </nav>
-  <nav>
-    <RouterLink class="active" to="/">Superhero List</RouterLink>
-    <RouterLink to="/about">My Favorite Superheroes</RouterLink>
   </nav>
 
   <RouterView />
