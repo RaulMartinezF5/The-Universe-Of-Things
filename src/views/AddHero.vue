@@ -5,7 +5,22 @@ const inputName=["name","slug","intelligence","strength","speed", "durability","
 "height",
 "weight",
 "eyeColor",
-"hairColor"] 
+"hairColor",
+"fullName",
+"alterEgos",
+"aliases",
+"placeOfBirth",
+"firstAppearance",
+"publisher",
+"alignment",
+"occupation",
+"base",
+"groupAffiliation",
+"relatives",
+"xs",
+"sm",
+"md",
+"lg"] 
 </script>
 
 
@@ -59,6 +74,57 @@ const inputName=["name","slug","intelligence","strength","speed", "durability","
 ></HeroFormInputVue>
         <HeroFormInputVue :name="inputName[13]"   :placeholder="inputName[13]"
 ></HeroFormInputVue>
+</fieldset>
+<fieldset>
+  <legend>
+    Biography:
+  </legend>
+  <HeroFormInputVue :name="inputName[14]"         :placeholder="inputName[14]"
+ ></HeroFormInputVue>
+        <HeroFormInputVue :name="inputName[15]"   :placeholder="inputName[15]"
+></HeroFormInputVue>
+        <HeroFormInputVue :name="inputName[16]"   :placeholder="inputName[16]"
+></HeroFormInputVue>
+        <HeroFormInputVue :name="inputName[17]"    :placeholder="inputName[17]"
+></HeroFormInputVue>
+        <HeroFormInputVue :name="inputName[18]"   :placeholder="inputName[18]"
+></HeroFormInputVue>
+        <HeroFormInputVue :name="inputName[19]"   :placeholder="inputName[19]"
+></HeroFormInputVue>
+<HeroFormInputVue :name="inputName[20]"   :placeholder="inputName[20]"
+></HeroFormInputVue>
+</fieldset>
+<fieldset>
+  <legend>
+   Work:
+  </legend>
+  <HeroFormInputVue :name="inputName[21]"         :placeholder="inputName[21]"
+ ></HeroFormInputVue>
+        <HeroFormInputVue :name="inputName[22]"   :placeholder="inputName[22]"
+></HeroFormInputVue>
+</fieldset>
+<fieldset>
+  <legend>
+   Connections:
+  </legend>
+  <HeroFormInputVue :name="inputName[23]"         :placeholder="inputName[23]"
+ ></HeroFormInputVue>
+        <HeroFormInputVue :name="inputName[24]"   :placeholder="inputName[24]"
+></HeroFormInputVue>
+</fieldset>
+<fieldset>
+  <legend>
+  Images:
+  </legend>
+  <HeroFormInputVue :name="inputName[25]"         :placeholder="inputName[25]"
+ ></HeroFormInputVue>
+        <HeroFormInputVue :name="inputName[26]"   :placeholder="inputName[26]"
+></HeroFormInputVue>
+        <HeroFormInputVue :name="inputName[27]"   :placeholder="inputName[27]"
+></HeroFormInputVue>
+        <HeroFormInputVue :name="inputName[28]"    :placeholder="inputName[28]"
+></HeroFormInputVue>
+
 </fieldset>
      </form> 
     </section>
