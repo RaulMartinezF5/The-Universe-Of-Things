@@ -3,6 +3,7 @@ export let favouritesList= []
 export function addFavourites(heroe) {
     console.log(heroe.id);
     favouritesList.push(heroe);
+    alert(heroe.name + " Añadido");
     printFavourites();
 }
 
