@@ -1,34 +1,29 @@
 <script setup>
 import HeroHeaderVue from './components/HeroHeader.vue';
 import HeroFooterVue from './components/HeroFooter.vue';
-import HeroNavVue from './components/HeroNav.vue';import { onBeforeMount, ref } from 'vue'
-import { useHeroesList } from '@/stores/heroesList.js'
-import HeroeItemVue from './components/HeroeItem.vue';
+import HeroNavVue from './components/HeroNav.vue';
+
+import HomeView from './views/HomeView.vue';
 
 
 
 
-const heroesStore = useHeroesList()
+// let favouritesList= []
 
-onBeforeMount(() => {
-  getHeroes()
-})
+// function addFavourites(heroe){
+//   console.log(heroe.id);
+//         favouritesList.push(heroe);
+//         printFavourites();
+//     }
 
-const loading = ref(true)
-
-const getHeroes = async () => {
-  await heroesStore.fetchHeroes()
-  loading.value = false
-  console.log(heroesStore.heroesList);
-}
-
-console.log(useHeroesList);
+// function printFavourites(){
+//   console.log(favouritesList);
+// }
 </script>
 
 <template>
   <HeroHeaderVue></HeroHeaderVue>
   <HeroNavVue></HeroNavVue>
-  <HeroeItemVue></HeroeItemVue>
   <HeroFooterVue></HeroFooterVue>
 </template>
 

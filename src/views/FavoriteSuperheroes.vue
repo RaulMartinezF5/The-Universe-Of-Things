@@ -1,18 +1,20 @@
 <script setup>
-import HeroPaginationVue from '../components/HeroPagination.vue'
-import HeroCardVue from '../components/HeroCard.vue';
+import HeroeFavouriteItem from '../components/HeroeFavouriteItem.vue'
+import { favouritesList } from '../stores/favouritesList';
 </script>
 
 <template>
-  <main>
-    <h2>My Favorite Superheroes</h2>
-    <section>
-      <ul>
-        <HeroCardVue></HeroCardVue>
-      </ul>
-    </section>
-    <HeroPaginationVue></HeroPaginationVue>
-  </main>
+  
+  <div class="list" v-for="favourite in favouritesList">
+    <HeroeFavouriteItem 
+      :id="favourite.id" 
+      :name="favourite.name"
+      :image="favourite.images.md" 
+      :powerstats="favourite.powerstats" />
+      <button @click="addFavourites(favourite)">&#10084;</button>
+  </div>
+
+
 </template>
 
 <style scoped>
