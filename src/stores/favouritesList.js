@@ -1,12 +1,13 @@
 export let favouritesList= []
 
 export function addFavourites(heroe) {
-    console.log(heroe.id);
     favouritesList.push(heroe);
     alert(heroe.name + " Añadido");
-    printFavourites();
+
 }
 
-function printFavourites() {
-    console.log(favouritesList);
+export function deleteFavourites(favourite) {
+    const index = favouritesList.filter(favourite.id);
+    // favouritesList.splice(2);
+    console.log(index);
 }
