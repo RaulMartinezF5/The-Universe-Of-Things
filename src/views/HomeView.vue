@@ -2,6 +2,21 @@
 import HeroPaginationVue from '../components/HeroPagination.vue'
 import HeroCardVue from '../components/HeroCard.vue';
 import HeroFileVue from '../components/HeroFile.vue';
+import { useHeroesList } from '@/stores/heroesList.js'
+import { onBeforeMount, ref } from 'vue';
+
+const heroesStore = useHeroesList()
+
+onBeforeMount(() => {
+  getHeroes()
+})
+
+const loading = ref(true)
+
+const getHeroes = async () => {
+  await heroesStore.fetchHeroes()
+  loading.value = false
+}
 </script>
 
 <template>
@@ -9,7 +24,12 @@ import HeroFileVue from '../components/HeroFile.vue';
     <h2>Superhero List</h2>
     <section>
       <ul>
-        <HeroCardVue></HeroCardVue>
+        <HeroCardVue v-for="heroe in heroesStore.heroesList" 
+        :id="heroe.id"
+        :name="heroe.name"
+        :images="heroe.images"
+        :powerstats="heroe.powerstats"
+        :heroe="heroe"></HeroCardVue>
       </ul>
     </section>
     <HeroPaginationVue></HeroPaginationVue>
