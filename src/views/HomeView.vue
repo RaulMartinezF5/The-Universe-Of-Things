@@ -1,7 +1,6 @@
 <script setup>
 import HeroPaginationVue from '../components/HeroPagination.vue'
 import HeroCardVue from '../components/HeroCard.vue';
-import HeroFileVue from '../components/HeroFile.vue';
 import { useHeroesList } from '@/stores/heroesList.js'
 import { onBeforeMount, ref } from 'vue';
 
@@ -33,8 +32,8 @@ const getHeroes = async () => {
       </ul>
     </section>
     <HeroPaginationVue></HeroPaginationVue>
+
   </main>
-  <HeroFileVue></HeroFileVue>
 </template>
 
 <style scoped>

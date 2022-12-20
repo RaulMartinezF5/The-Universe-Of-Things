@@ -2,11 +2,13 @@
 import HeroStarsEvaluationVue from './HeroStarsEvaluation.vue';
 import HeroModifyButtonVue from './HeroModifyButton.vue';
 import { addFavourites } from '@/stores/favouritesList';
-import { sendHeroFile } from "../stores/showFile"
+import HeroFileVue from '../components/HeroFile.vue';
 
-function showFileHero() {
-  const visorFile = document.getElementById('visor')
+
+function showFileHero(id) {
+  const visorFile = document.getElementById(id)
   visorFile.classList.remove('invisible')
+  console.log(visorFile);
 }
 
 const props = defineProps({
@@ -42,7 +44,7 @@ const props = defineProps({
     <figure>
       <img v-bind:src="images.lg" v-bind:alt="name">
       <div class="openHeroFile">
-        <img src="../assets/img/arrowcircleup.png" alt="Superhero File" @click="showFileHero(), sendHeroFile(heroe)">
+        <img src="../assets/img/arrowcircleup.png" alt="Superhero File" @click="showFileHero(id)">
       </div>
     </figure>
     <div class="contentHero">
@@ -52,6 +54,8 @@ const props = defineProps({
       <HeroStarsEvaluationVue :id="id" :stars="stars" :heroe="heroe" v-if="this.$route.path !== '/'"></HeroStarsEvaluationVue>
       <HeroModifyButtonVue v-if="this.$route.path !== '/'"></HeroModifyButtonVue>
     </div>
+    <HeroFileVue :id="id" :heroe="heroe"></HeroFileVue>
+
   </li>
 </template>
 
@@ -81,6 +85,7 @@ h3 {
   text-transform: uppercase;
   margin-bottom: 4px;
   margin-top: -24px;
+  margin-right: 25px;
 }
 
 .myFavoriteSuperhero {

@@ -2,29 +2,42 @@
 import { computed } from "vue";
 import { heroFile } from "../stores/showFile"
 
-function goInvisible() {
-  const visor = document.getElementById("visor");
+const props = defineProps({
+  id: {
+    type: Number,
+    default: 0
+  },
+  heroe: {
+    type: Object,
+    default: null
+  }
+  })
+function goInvisible(id) {
+  const visor = document.getElementById(id);
   visor.classList.add("invisible")
 }
-const getFile = computed({
-    get() {
-        return heroFile;
-    }
-})
+
 </script>
 <template>
-  <div id="visor" class="invisible">
+  <div :id="id" class="invisible visor">
     <div id="fileDetails">
-      <button @click="goInvisible">X</button>
-      <p>Patata - {{ getFile }}</p>
+      <button @click="goInvisible(id)">X</button>
+      <p>{{ heroe.name }}</p>
+      <p>{{ heroe.slug }}</p>  
+      <p v-for="(key, power) in heroe.powerstats"><strong>{{power}}:</strong> {{ key }}</p>
+      <p v-for="(key, power) in heroe.appearance"><strong>{{power}}:</strong> {{ key }}</p> 
+      <p v-for="(key, power) in heroe.biography"><strong>{{power}}:</strong> {{ key }}</p>
+      <p v-for="(key, power) in heroe.work"><strong>{{power}}:</strong> {{ key }}</p>
+      <p v-for="(key, power) in heroe.conections"><strong>{{power}}:</strong> {{ key }}</p> 
     </div>
 
   </div>
 </template>
   
 <style scope>
-#visor {
-  width: 100%;
+
+.visor {
+  width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10vw;
@@ -48,7 +61,7 @@ const getFile = computed({
   color: #000;
 }
 
-#visor button {
+.visor button {
   position: absolute;
   top: 30px;
   right: 30px;
