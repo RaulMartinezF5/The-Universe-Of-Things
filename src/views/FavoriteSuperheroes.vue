@@ -1,6 +1,8 @@
 <script setup>
 import HeroeFavouriteItem from '../components/HeroeFavouriteItem.vue'
-import { deleteFavourites, favouritesList } from '../stores/favouritesList';
+import { favouritesList } from '../stores/favouritesList';
+import { deleteFavourite } from '../stores/deleteFavourite';
+
 </script>
 
 <template>
@@ -11,8 +13,9 @@ import { deleteFavourites, favouritesList } from '../stores/favouritesList';
       :name="favourite.name"
       :image="favourite.images.md" 
       :powerstats="favourite.powerstats" />
-      <button @click="deleteFavourites(favourite)">&#10084;</button>
-      <button @click="editFavourites(favourite)">&#10084;</button>
+      <button @click="deleteFavourite(favourite)">&#10084;</button>
+      
+      <!-- <button @click="editFavourites(favourite)">&#10084;</button> -->
   </div>
 
 </template>
