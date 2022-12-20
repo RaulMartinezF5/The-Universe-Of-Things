@@ -1,15 +1,22 @@
 <script setup>
+import { computed } from "vue";
+import { heroFile } from "../stores/showFile"
+
 function goInvisible() {
   const visor = document.getElementById("visor");
   visor.classList.add("invisible")
 }
-
+const getFile = computed({
+    get() {
+        return heroFile;
+    }
+})
 </script>
 <template>
   <div id="visor" class="invisible">
     <div id="fileDetails">
       <button @click="goInvisible">X</button>
-      <p>Patata</p>
+      <p>Patata - {{ getFile }}</p>
     </div>
 
   </div>

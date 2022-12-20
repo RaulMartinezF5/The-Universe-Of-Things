@@ -1,11 +1,11 @@
 export let favouritesList= []
 
 export function addFavourites(heroe) {
-    console.log(heroe.id);
+    heroe["stars"] = 0;
     favouritesList.push(heroe);
-    printFavourites();
+    alert(heroe.name + " added")
 }
 
-function printFavourites() {
-    console.log(favouritesList);
+export function addStars(heroe, stars) {
+    heroe.stars = stars;
 }

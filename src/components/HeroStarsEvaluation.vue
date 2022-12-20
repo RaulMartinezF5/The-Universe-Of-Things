@@ -1,12 +1,33 @@
+<script setup>
+import { addStars } from '../stores/favouritesList'
+
+const starsIds = ["id-1-", "id-2-", "id-3-", "id-4-", "id-5-"]
+
+const props = defineProps({
+  id: {
+    type: Number,
+    default: null
+  },
+  stars: {
+    type: Number,
+    default: null
+  },
+  heroe: {
+    type: Object,
+    default: null
+  }
+})
+</script>
+
 <template>
   <div id="valuationStars">
     <form action="" method="post">
       <p class="clasificacion">
-        <input id="radio1" type="radio" name="estrellas" value="5"><label for="radio1">&#9733;</label>
-        <input id="radio2" type="radio" name="estrellas" value="4"><label for="radio2">&#9733;</label>
-        <input id="radio3" type="radio" name="estrellas" value="3"><label for="radio3">&#9733;</label>
-        <input id="radio4" type="radio" name="estrellas" value="2"><label for="radio4">&#9733;</label>
-        <input id="radio5" type="radio" name="estrellas" value="1"><label for="radio5">&#9733;</label>
+        <input :id=String(starsIds[0]+id) type="radio" name="estrellas" value="5" :checked="stars==5? true: false" @click="addStars(heroe, 5)"><label :for=String(starsIds[0]+id)>&#9733;</label>
+        <input :id=String(starsIds[1]+id) type="radio" name="estrellas" value="4" :checked="stars==4? true: false" @click="addStars(heroe, 4)"><label :for=String(starsIds[1]+id)>&#9733;</label>
+        <input :id=String(starsIds[2]+id) type="radio" name="estrellas" value="3" :checked="stars==3? true: false" @click="addStars(heroe, 3)"><label :for=String(starsIds[2]+id)>&#9733;</label>
+        <input :id=String(starsIds[3]+id) type="radio" name="estrellas" value="2" :checked="stars==2? true: false" @click="addStars(heroe, 2)"><label :for=String(starsIds[3]+id)>&#9733;</label>
+        <input :id=String(starsIds[4]+id) type="radio" name="estrellas" value="1" :checked="stars==1? true: false" @click="addStars(heroe, 1)"><label :for=String(starsIds[4]+id)>&#9733;</label>
       </p>
     </form>
   </div>

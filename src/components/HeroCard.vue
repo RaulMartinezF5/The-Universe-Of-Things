@@ -2,6 +2,8 @@
 import HeroStarsEvaluationVue from './HeroStarsEvaluation.vue';
 import HeroModifyButtonVue from './HeroModifyButton.vue';
 import { addFavourites } from '@/stores/favouritesList';
+import { sendHeroFile } from "../stores/showFile"
+
 function showFileHero() {
   const visorFile = document.getElementById('visor')
   visorFile.classList.remove('invisible')
@@ -27,6 +29,10 @@ const props = defineProps({
   heroe: {
     type: Object,
     default: null
+  },
+  stars: {
+    type: Number,
+    default: 0
   }
 })
 
@@ -36,14 +42,14 @@ const props = defineProps({
     <figure>
       <img v-bind:src="images.lg" v-bind:alt="name">
       <div class="openHeroFile">
-        <img src="../assets/img/arrowcircleup.png" alt="Superhero File" @click="showFileHero()">
+        <img src="../assets/img/arrowcircleup.png" alt="Superhero File" @click="showFileHero(), sendHeroFile(heroe)">
       </div>
     </figure>
     <div class="contentHero">
-      <p class="myFavoriteSuperhero" @click="addFavourites(heroe)">&#10084;</p>
+      <p v-bind:class="this.$route.path !== '/'?'myFavoriteSuperheroAdded' :'myFavoriteSuperhero'" class="myFavoriteSuperhero" @click="addFavourites(heroe)">&#10084;</p>
       <h3>{{ name }}</h3>
       <p v-for="(key, power) in powerstats"><strong>{{power}}:</strong> {{ key }}</p>
-      <HeroStarsEvaluationVue v-if="this.$route.path !== '/'"></HeroStarsEvaluationVue>
+      <HeroStarsEvaluationVue :id="id" :stars="stars" :heroe="heroe" v-if="this.$route.path !== '/'"></HeroStarsEvaluationVue>
       <HeroModifyButtonVue v-if="this.$route.path !== '/'"></HeroModifyButtonVue>
     </div>
   </li>
@@ -83,8 +89,19 @@ h3 {
   font-size: 24px;
 }
 
+.myFavoriteSuperheroAdded {
+  color: #ff2826;
+  text-align: right;
+  font-size: 24px;
+}
+.myFavoriteSuperheroAdded:hover {
+  color: gray;
+  cursor: pointer;
+}
+
 .myFavoriteSuperhero:hover {
   color: #ff2826;
+  cursor: pointer;
 }
 
 p {

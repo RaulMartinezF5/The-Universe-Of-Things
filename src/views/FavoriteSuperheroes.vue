@@ -2,6 +2,7 @@
 import HeroPaginationVue from '../components/HeroPagination.vue'
 import HeroCardVue from '../components/HeroCard.vue';
 import HeroFileVue from '../components/HeroFile.vue';
+import { favouritesList } from '../stores/favouritesList';
 </script>
 
 <template>
@@ -9,7 +10,8 @@ import HeroFileVue from '../components/HeroFile.vue';
     <h2>My Favorite Superheroes</h2>
     <section>
       <ul>
-        <HeroCardVue></HeroCardVue>
+        <HeroCardVue v-for="favourite in favouritesList" :id="favourite.id" :name="favourite.name" :images="favourite.images"  :stars="favourite.stars" :heroe="favourite"
+          :powerstats="favourite.powerstats"/>
       </ul>
     </section>
     <HeroPaginationVue></HeroPaginationVue>
