@@ -29,5 +29,6 @@ const props = defineProps({
       <h4>{{power}}</h4>
       </div>
       <img v-bind:src="image">
+      
    </div>
 </template>

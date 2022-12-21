@@ -1,8 +1,8 @@
 <script setup>
 import HeroeItemVue from '../components/HeroeItem.vue';
 import { useHeroesList } from '@/stores/heroesList.js'
-import { addFavourites} from '@/stores/favouritesList';
 import { onBeforeMount, ref } from 'vue';
+import { addFavourites} from "../stores/favouritesList.js";
 
 const heroesStore = useHeroesList()
 

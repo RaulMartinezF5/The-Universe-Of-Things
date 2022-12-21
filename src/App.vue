@@ -2,6 +2,8 @@
 import HeroHeaderVue from './components/HeroHeader.vue';
 import HeroFooterVue from './components/HeroFooter.vue';
 import HeroNavVue from './components/HeroNav.vue';
+import HomeView from './views/HomeView.vue';
+import FavoriteSuperheroes from './views/FavoriteSuperheroes.vue';
 
 </script>
 

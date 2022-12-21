@@ -1,8 +1,27 @@
 <script setup>
 import HeroeFavouriteItem from '../components/HeroeFavouriteItem.vue'
-import { favouritesList } from '../stores/favouritesList';
-import { deleteFavourite } from '../stores/deleteFavourite';
+// import { deleteFavourite } from '../stores/deleteFavourite';
+import { useFavouritesList } from '../stores/favouritesList';
+import { onBeforeMount, ref } from 'vue';
+import {favouritesList} from '../stores/favouritesList'
 
+const favouritesStore = useFavouritesList()
+
+onBeforeMount(() => {
+  getFavourites()
+})
+
+const loading = ref(true)
+
+const getFavourites = async () => {
+  await favouritesStore.fetchFavourites()
+  loading.value = false
+}
+function deleteFavourite(favourite) {
+    let index = favouritesList.indexOf(favourite);
+    favouritesList.splice(index, 1);
+    console.log(favouritesList);
+}
 </script>
 
 <template>
