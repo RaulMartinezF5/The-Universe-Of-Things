@@ -45,7 +45,7 @@ A traves de JS y Vue, desarrollamos las funciones necesarias para cumplir con lo
 - Visual Studio Code
 - VUE 3
 - GitHub
-- La API de Superheroes de ([Akabab](https://akabab.github.io/superhero-api/api/#alljson))
+- La API de Superheroes de [Akabab](https://akabab.github.io/superhero-api/api/#alljson).
 ## EQUIPO
 - [@Carol121d](https://github.com/Carol21d)
 - [@Diego-Alfredo-González](https://github.com/diegofred10)
