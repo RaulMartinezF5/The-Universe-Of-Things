@@ -4,23 +4,29 @@ import HeroeFavouriteItem from '../components/HeroeFavouriteItem.vue'
 import { useFavouritesList } from '../stores/favouritesList';
 import { onBeforeMount, ref } from 'vue';
 import {favouritesList} from '../stores/favouritesList'
-
 const favouritesStore = useFavouritesList()
 
 onBeforeMount(() => {
   getFavourites()
 })
 
-const loading = ref(true)
+let loading = ref(true)
 
 const getFavourites = async () => {
   await favouritesStore.fetchFavourites()
   loading.value = false
 }
+
 function deleteFavourite(favourite) {
     let index = favouritesList.indexOf(favourite);
-    favouritesList.splice(index, 1);
+    if(confirm("Estás seguro de querer eliminar a "+favourite.name+"?")){
+      alert(favourite.name+" ha sido eliminado")
+      favouritesList.splice(index, 1);
+      loading.value = true
+      getFavourites()
+    }
     console.log(favouritesList);
+    
 }
 </script>
 
@@ -32,9 +38,8 @@ function deleteFavourite(favourite) {
       :name="favourite.name"
       :image="favourite.images.md" 
       :powerstats="favourite.powerstats" />
-      <button @click="deleteFavourite(favourite)">&#10084;</button>
       
-      <!-- <button @click="editFavourites(favourite)">&#10084;</button> -->
+      <button @click="deleteFavourite(favourite)">&#10084;</button>
   </div>
 
 </template>
