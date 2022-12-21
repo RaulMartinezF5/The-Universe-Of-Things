@@ -8,7 +8,8 @@
     </figure>
     <div class="contentHero">
       <p v-bind:class="this.$route.path !== '/' ? 'myFavoriteSuperheroAdded' : 'myFavoriteSuperhero'"
-        class="myFavoriteSuperhero" @click="this.$route.path === '/'?addFavourites(heroe):deleteFavourite(heroe)">&#10084;</p>
+        class="myFavoriteSuperhero" @click="this.$route.path === '/' ? addFavourites(heroe) : deleteFavourite(heroe)">
+        &#10084;</p>
       <h3>{{ name }}</h3>
       <p v-for="(key, power) in powerstats"><strong>{{ power }}:</strong> {{ key }}</p>
       <StarsEvaluationVue :id="id" :stars="stars" :heroe="heroe" v-if="this.$route.path !== '/'"></StarsEvaluationVue>
@@ -36,12 +37,12 @@ const getFavourites = async () => {
 }
 
 function deleteFavourite(favourite) {
-    let index = favouritesList.indexOf(favourite);
-    if(confirm("Are you sure you want to remove "+favourite.name+" from Favorites?")){
-      alert(favourite.name+" has been removed.")
-      favouritesList.splice(index, 1);
-        favouritesList[0].name +=" ";
-    }
+  let index = favouritesList.indexOf(favourite);
+  if (confirm("Are you sure you want to remove " + favourite.name + " from Favorites?")) {
+    alert(favourite.name + " has been removed.")
+    favouritesList.splice(index, 1);
+    favouritesList[0].name += " ";
+  }
 }
 
 function showFileHero(id) {
@@ -137,13 +138,11 @@ p {
   position: absolute;
   right: 10px;
   top: 14px;
-
 }
 
 .contentHero {
   position: relative;
   padding: 20px;
-
 }
 
 .openHeroFile {

@@ -1,40 +1,9 @@
 <script setup>
-<<<<<<< HEAD
-import HeroeFavouriteItem from '../components/HeroeFavouriteItem.vue'
-// import { deleteFavourite } from '../stores/deleteFavourite';
-import { useFavouritesList } from '../stores/favouritesList';
-import { onBeforeMount, ref } from 'vue';
-import {favouritesList} from '../stores/favouritesList'
-import HomeView from './HomeView.vue';
-const favouritesStore = useFavouritesList()
-
-onBeforeMount(() => {
-  getFavourites()
-})
-
-let loading = ref(true)
-
-const getFavourites = async () => {
-  await favouritesStore.fetchFavourites()
-  loading.value = false
-}
-
-function deleteFavourite(favourite) {
-    let index = favouritesList.indexOf(favourite);
-    if(confirm("Estás seguro de querer eliminar a "+favourite.name+"?")){
-      alert(favourite.name+" ha sido eliminado")
-      favouritesList.splice(index, 1);
-      if(favouritesList.length>0){
-      favouritesList[index].name +=" ";
-      console.log(favouritesList);
-      }else{
-        document.write("No hay favoritos");
-      }
-    }
-    console.log(favouritesList);
-    
-}
-
+import HeaderVue from '../components/Header.vue';
+import NavVue from '../components/Nav.vue';
+import FooterVue from '../components/Footer.vue';
+import CardVue from '../components/Card.vue';
+import { favouritesList } from '../stores/favouritesList';
 </script>
 
 <template>
@@ -76,29 +45,25 @@ ul {
   ul {
     grid-template-columns: 1fr 1fr 1fr;
   }
-
 }
 
 @media (max-width:700px) {
   ul {
     grid-template-columns: 1fr 1fr;
   }
-
 }
 
 @media (max-width:500px) {
   h2 {
     margin-bottom: 30px;
   }
-  
+
   ul {
     grid-template-columns: 1fr;
-
   }
 
   section {
     padding: 0;
   }
-
 }
 </style>

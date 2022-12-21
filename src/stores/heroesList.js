@@ -12,22 +12,9 @@ export const useHeroesList = defineStore({
             .then(data => {
                 this.heroesList = data
             })
-            
         },
         getHeroById (id) {
             return this.heroesList.find(heroe => heroe.id === id)
         }
     }
-    
 })
-
-
-
-
-
-
-
-
-
-
-
