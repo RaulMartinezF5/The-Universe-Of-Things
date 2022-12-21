@@ -1,4 +1,5 @@
 <script setup>
+<<<<<<< HEAD
 import HeroeFavouriteItem from '../components/HeroeFavouriteItem.vue'
 // import { deleteFavourite } from '../stores/deleteFavourite';
 import { useFavouritesList } from '../stores/favouritesList';
@@ -33,20 +34,22 @@ function deleteFavourite(favourite) {
     console.log(favouritesList);
     
 }
+
 </script>
 
 <template>
-  
-  <div class="list" v-for="favourite in favouritesList">
-    <HeroeFavouriteItem 
-      :id="favourite.id" 
-      :name="favourite.name"
-      :image="favourite.images.md" 
-      :powerstats="favourite.powerstats" />
-      
-      <button @click="deleteFavourite(favourite)">&#10084;</button>
-  </div>
-
+  <HeaderVue></HeaderVue>
+  <NavVue></NavVue>
+  <main>
+    <h2>My Favorite Superheroes</h2>
+    <section>
+      <ul>
+        <CardVue v-for="favourite in favouritesList" :id="favourite.id" :name="favourite.name"
+          :images="favourite.images" :stars="favourite.stars" :heroe="favourite" :powerstats="favourite.powerstats" />
+      </ul>
+    </section>
+  </main>
+  <FooterVue></FooterVue>
 </template>
 
 <style scoped>
@@ -72,7 +75,29 @@ ul {
 @media (max-width:900px) {
   ul {
     grid-template-columns: 1fr 1fr 1fr;
+  }
 
+}
+
+@media (max-width:700px) {
+  ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (max-width:500px) {
+  h2 {
+    margin-bottom: 30px;
+  }
+  
+  ul {
+    grid-template-columns: 1fr;
+
+  }
+
+  section {
+    padding: 0;
   }
 
 }

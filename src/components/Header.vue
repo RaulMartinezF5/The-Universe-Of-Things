@@ -5,7 +5,7 @@
   </header>
 </template>
 
-<style scope>
+<style scoped>
 header {
   background: linear-gradient(90deg, #000986 10%, #343FE1 90%);
   position: relative;
@@ -15,7 +15,7 @@ header {
 
 h1 {
   font-family: "Zen Dots", sans-serif;
-  font-size: 7.7vw;
+  font-size: 7.4vw;
   color: #fff;
   font-weight: normal;
   position: absolute;
@@ -25,6 +25,13 @@ h1 {
 
 header img {
   width: 28%;
-  margin: 8px 0 0 53px;
+  margin: 8px 0 0 5.9%;
+}
+
+@media (max-width:500px) {
+  header img {
+    width: 28%;
+    margin: 8px 0 0 5.9%;
+  }
 }
 </style>

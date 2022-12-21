@@ -1,8 +1,25 @@
+<template>
+  <HeaderVue></HeaderVue>
+  <NavVue></NavVue>
+  <main>
+    <h2>Superhero List</h2>
+    <section>
+      <ul>
+        <CardVue v-for="heroe in heroesStore.heroesList" :id="heroe.id" :name="heroe.name" :images="heroe.images"
+          :powerstats="heroe.powerstats" :heroe="heroe"></CardVue>
+      </ul>
+    </section>
+  </main>
+  <FooterVue></FooterVue>
+</template>
+
 <script setup>
-import HeroeItemVue from '../components/HeroeItem.vue';
+import HeaderVue from '../components/Header.vue';
+import NavVue from '../components/Nav.vue';
+import FooterVue from '../components/Footer.vue';
+import CardVue from '../components/Card.vue';
 import { useHeroesList } from '@/stores/heroesList.js'
 import { onBeforeMount, ref } from 'vue';
-import { addFavourites} from "../stores/favouritesList.js";
 
 const heroesStore = useHeroesList()
 
@@ -17,25 +34,6 @@ const getHeroes = async () => {
   loading.value = false
 }
 </script>
-
-<template>
-  <main>
-   <section>
-    <ul>
-      <div class="list" v-for="heroe in heroesStore.heroesList">
-        <li>
-      <HeroeItemVue 
-        :id="heroe.id" 
-        :name="heroe.name"
-        :image="heroe.images.md" 
-        :powerstats="heroe.powerstats" />
-        <button @click="addFavourites(heroe)">&#10084;</button>
-    </li>
-    </div>
-    </ul>
-   </section>
-  </main>
-</template>
 
 <style scoped>
 h2 {
@@ -104,9 +102,31 @@ p {
 
 @media (max-width:900px) {
   ul {
-  grid-template-columns:1fr 1fr 1fr;
-  
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
 }
+
+@media (max-width:700px) {
+  ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (max-width:500px) {
+  h2 {
+    margin-bottom: 30px;
+  }
+  
+  ul {
+    grid-template-columns: 1fr;
+
+  }
+
+  section {
+    padding: 0;
+  }
 
 }
 
