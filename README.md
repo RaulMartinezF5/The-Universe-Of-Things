@@ -13,9 +13,9 @@ Se nos solicitan unos requisitos mínimos pactados:
 Segun los requisitos solicitados, desarrollamos un diagrama de flujo que muestra las opciones que tendrá el usuario al acceder a nuestro sitio.
 ### *Sketch*, *mockup* y prototipo
 <a href="https://yquetecuentas.com/f5/The-Universe-Of-Things/Sketch-Herores.png" target="_blank"><img src="https://yquetecuentas.com/f5/The-Universe-Of-Things/Sketch-Herores.png" alt="Sketch" width="150"></a>
-<a href="https://yquetecuentas.com/f5/The-Universe-Of-Things/Mockup-Superheores.png" target="_blank"><img src="https://yquetecuentas.com/f5/The-Universe-Of-Things/Mockup-Superheores.png" alt="Mockup" width="150"></a>
+<a href="https://yquetecuentas.com/f5/The-Universe-Of-Things/Mockup-Superheores.png" target="_blank"><img src="https://yquetecuentas.com/f5/The-Universe-Of-Things/Mockup-Superheores.png" alt="Mockup" width="150"></a>   
 <a href="https://yquetecuentas.com/f5/The-Universe-Of-Things/Prototipe-Superheores.png" target="_blank"><img src="https://yquetecuentas.com/f5/The-Universe-Of-Things/Prototipe-Superheores.png" alt="Prototipo Superheroes Sobremesa" width="150"></a>
-<a href="https://yquetecuentas.com/f5/The-Universe-Of-Things/Prototype-Favoritos.png" target="_blank"><img src="https://yquetecuentas.com/f5/The-Universe-Of-Things/Prototype-Favoritos.png" alt="Prototipo Favoritos Sobremesa" width="150"></a>
+<a href="https://yquetecuentas.com/f5/The-Universe-Of-Things/Prototype-Favoritos.png" target="_blank"><img src="https://yquetecuentas.com/f5/The-Universe-Of-Things/Prototype-Favoritos.png" alt="Prototipo Favoritos Sobremesa" width="150"></a>   
 <a href="https://yquetecuentas.com/f5/The-Universe-Of-Things/Prototipe-Movil-Superheores.png" target="_blank"><img src="https://yquetecuentas.com/f5/The-Universe-Of-Things/Prototipe-Movil-Superheores.png" alt="Prototipo Superheroes Móvil" width="150"></a>
 <a href="https://yquetecuentas.com/f5/The-Universe-Of-Things/Prototipe-Movil-Favoritos.png" target="_blank"><img src="https://yquetecuentas.com/f5/The-Universe-Of-Things/Prototipe-Movil-Favoritos.png" alt="Prototipo Favoritos Móvil" width="150"></a>   
 Usando Figma desarrollamos el *sketch*, *mockup* y prototipo de cómo se veria la web para mostrar a quien nos realizo el encargo y conseguir su aprobación.
