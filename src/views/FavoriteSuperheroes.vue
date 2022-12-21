@@ -4,6 +4,7 @@ import HeroeFavouriteItem from '../components/HeroeFavouriteItem.vue'
 import { useFavouritesList } from '../stores/favouritesList';
 import { onBeforeMount, ref } from 'vue';
 import {favouritesList} from '../stores/favouritesList'
+import HomeView from './HomeView.vue';
 const favouritesStore = useFavouritesList()
 
 onBeforeMount(() => {
@@ -22,8 +23,12 @@ function deleteFavourite(favourite) {
     if(confirm("Estás seguro de querer eliminar a "+favourite.name+"?")){
       alert(favourite.name+" ha sido eliminado")
       favouritesList.splice(index, 1);
-      loading.value = true
-      getFavourites()
+      if(favouritesList.length>0){
+      favouritesList[index].name +=" ";
+      console.log(favouritesList);
+      }else{
+        document.write("No hay favoritos");
+      }
     }
     console.log(favouritesList);
     
