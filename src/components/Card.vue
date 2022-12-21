@@ -1,14 +1,52 @@
-<script setup>
-import HeroStarsEvaluationVue from './HeroStarsEvaluation.vue';
-import HeroModifyButtonVue from './HeroModifyButton.vue';
-import { addFavourites } from '@/stores/favouritesList';
-import HeroFileVue from '../components/HeroFile.vue';
+<template>
+  <li>
+    <figure>
+      <img v-bind:src="images.lg" v-bind:alt="name">
+      <div class="openHeroFile">
+        <img src="../assets/img/arrowcircleup.png" alt="Superhero File" @click="showFileHero(id)">
+      </div>
+    </figure>
+    <div class="contentHero">
+      <p v-bind:class="this.$route.path !== '/' ? 'myFavoriteSuperheroAdded' : 'myFavoriteSuperhero'"
+        class="myFavoriteSuperhero" @click="this.$route.path === '/'?addFavourites(heroe):deleteFavourite(heroe)">&#10084;</p>
+      <h3>{{ name }}</h3>
+      <p v-for="(key, power) in powerstats"><strong>{{ power }}:</strong> {{ key }}</p>
+      <StarsEvaluationVue :id="id" :stars="stars" :heroe="heroe" v-if="this.$route.path !== '/'"></StarsEvaluationVue>
+    </div>
+    <FileVue :id="id" :heroe="heroe"></FileVue>
+  </li>
+</template>
 
+<script setup>
+import StarsEvaluationVue from './StarsEvaluation.vue';
+import { addFavourites } from '@/stores/favouritesList';
+import FileVue from './File.vue';
+import { favouritesList } from '../stores/favouritesList';
+import { useFavouritesList } from '../stores/favouritesList';
+import { onBeforeMount, ref } from 'vue';
+
+const favouritesStore = useFavouritesList()
+
+onBeforeMount(() => {
+  getFavourites()
+})
+
+const getFavourites = async () => {
+  await favouritesStore.fetchFavourites()
+}
+
+function deleteFavourite(favourite) {
+    let index = favouritesList.indexOf(favourite);
+    if(confirm("Are you sure you want to remove "+favourite.name+" from Favorites?")){
+      alert(favourite.name+" has been removed.")
+      favouritesList.splice(index, 1);
+        favouritesList[0].name +=" ";
+    }
+}
 
 function showFileHero(id) {
   const visorFile = document.getElementById(id)
   visorFile.classList.remove('invisible')
-  console.log(visorFile);
 }
 
 const props = defineProps({
@@ -37,27 +75,7 @@ const props = defineProps({
     default: 0
   }
 })
-
 </script>
-<template>
-  <li>
-    <figure>
-      <img v-bind:src="images.lg" v-bind:alt="name">
-      <div class="openHeroFile">
-        <img src="../assets/img/arrowcircleup.png" alt="Superhero File" @click="showFileHero(id)">
-      </div>
-    </figure>
-    <div class="contentHero">
-      <p v-bind:class="this.$route.path !== '/'?'myFavoriteSuperheroAdded' :'myFavoriteSuperhero'" class="myFavoriteSuperhero" @click="addFavourites(heroe)">&#10084;</p>
-      <h3>{{ name }}</h3>
-      <p v-for="(key, power) in powerstats"><strong>{{power}}:</strong> {{ key }}</p>
-      <HeroStarsEvaluationVue :id="id" :stars="stars" :heroe="heroe" v-if="this.$route.path !== '/'"></HeroStarsEvaluationVue>
-      <!-- <HeroModifyButtonVue v-if="this.$route.path !== '/'"></HeroModifyButtonVue> -->
-    </div>
-    <HeroFileVue :id="id" :heroe="heroe"></HeroFileVue>
-
-  </li>
-</template>
 
 <style scoped>
 li {
@@ -75,8 +93,7 @@ figure {
 img {
   width: 100%;
   aspect-ratio: 1/1;
-
-
+  object-fit: cover;
 }
 
 h3 {
@@ -99,6 +116,7 @@ h3 {
   text-align: right;
   font-size: 24px;
 }
+
 .myFavoriteSuperheroAdded:hover {
   color: gray;
   cursor: pointer;
@@ -128,8 +146,6 @@ p {
 
 }
 
-
-
 .openHeroFile {
   position: absolute;
   bottom: 4px;
@@ -157,10 +173,9 @@ p {
 
 @media (max-width:500px) {
   li {
-  border: none;
-  border-radius: 0;
-  margin-bottom: 50px;
-}
-  
+    border: none;
+    border-radius: 0;
+    margin-bottom: 50px;
+  }
 }
 </style>

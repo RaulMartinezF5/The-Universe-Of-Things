@@ -1,18 +1,12 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-
+import { RouterLink } from 'vue-router'
 </script>
 
-
 <template>
-
-<nav>
+  <nav>
     <RouterLink to="/">Superhero List</RouterLink>
     <RouterLink to="/favoritesuperheroes">My Favorite Superheroes</RouterLink>
-    <!-- <RouterLink to="/addhero" v-if="this.$route.path !== '/'">Add Your Heroes</RouterLink> -->
   </nav>
-  <RouterView />
-
 </template>
 
 <style scoped>
@@ -25,12 +19,11 @@ nav {
   background: linear-gradient(90deg, #000986 10%, #343FE1 90%);
   z-index: 10000;
   margin-bottom: 50px;
-
 }
 
 a {
   text-decoration: none;
-  color: #FF5E00;
+  color: #ff9801;
   font-weight: bold;
   display: inline-block;
   height: 47px;
@@ -50,18 +43,15 @@ nav a.router-link-exact-active {
 }
 
 @media (max-width:500px) {
-
   nav {
-  display: flex;
-  flex-direction: column;
-  position: sticky;
-  top: 0;
-  background: linear-gradient(90deg, #000986 10%, #343FE1 90%);
-  z-index: 10000;
-  margin-bottom: 50px;
-
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(90deg, #000986 10%, #343FE1 90%);
+    z-index: 10000;
+    margin-bottom: 50px;
+    text-align: center;
+  }
 }
-
-}
-
 </style>

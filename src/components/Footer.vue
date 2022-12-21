@@ -4,7 +4,7 @@
   </footer>
 </template>
 
-<style scope>
+<style scoped>
 footer {
   height: 80px;
   width: 100%;

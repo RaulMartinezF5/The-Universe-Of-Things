@@ -1,6 +1,23 @@
+<template>
+  <HeaderVue></HeaderVue>
+  <NavVue></NavVue>
+  <main>
+    <h2>Superhero List</h2>
+    <section>
+      <ul>
+        <CardVue v-for="heroe in heroesStore.heroesList" :id="heroe.id" :name="heroe.name" :images="heroe.images"
+          :powerstats="heroe.powerstats" :heroe="heroe"></CardVue>
+      </ul>
+    </section>
+  </main>
+  <FooterVue></FooterVue>
+</template>
+
 <script setup>
-import HeroPaginationVue from '../components/HeroPagination.vue'
-import HeroCardVue from '../components/HeroCard.vue';
+import HeaderVue from '../components/Header.vue';
+import NavVue from '../components/Nav.vue';
+import FooterVue from '../components/Footer.vue';
+import CardVue from '../components/Card.vue';
 import { useHeroesList } from '@/stores/heroesList.js'
 import { onBeforeMount, ref } from 'vue';
 
@@ -17,24 +34,6 @@ const getHeroes = async () => {
   loading.value = false
 }
 </script>
-
-<template>
-  <main>
-    <h2>Superhero List</h2>
-    <section>
-      <ul>
-        <HeroCardVue v-for="heroe in heroesStore.heroesList" 
-        :id="heroe.id"
-        :name="heroe.name"
-        :images="heroe.images"
-        :powerstats="heroe.powerstats"
-        :heroe="heroe"></HeroCardVue>
-      </ul>
-    </section>
-    <!-- <HeroPaginationVue></HeroPaginationVue> -->
-
-  </main>
-</template>
 
 <style scoped>
 h2 {
@@ -68,14 +67,21 @@ ul {
     grid-template-columns: 1fr 1fr;
   }
 
-}@media (max-width:500px) {
+}
+
+@media (max-width:500px) {
+  h2 {
+    margin-bottom: 30px;
+  }
+  
   ul {
     grid-template-columns: 1fr;
-    
+
   }
+
   section {
-  padding: 0;
-}
+    padding: 0;
+  }
 
 }
 </style>
