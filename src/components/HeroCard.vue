@@ -52,7 +52,7 @@ const props = defineProps({
       <h3>{{ name }}</h3>
       <p v-for="(key, power) in powerstats"><strong>{{power}}:</strong> {{ key }}</p>
       <HeroStarsEvaluationVue :id="id" :stars="stars" :heroe="heroe" v-if="this.$route.path !== '/'"></HeroStarsEvaluationVue>
-      <HeroModifyButtonVue v-if="this.$route.path !== '/'"></HeroModifyButtonVue>
+      <!-- <HeroModifyButtonVue v-if="this.$route.path !== '/'"></HeroModifyButtonVue> -->
     </div>
     <HeroFileVue :id="id" :heroe="heroe"></HeroFileVue>
 
@@ -153,5 +153,14 @@ p {
   width: 30px;
   height: 30px;
   min-width: 30px;
+}
+
+@media (max-width:500px) {
+  li {
+  border: none;
+  border-radius: 0;
+  margin-bottom: 50px;
+}
+  
 }
 </style>

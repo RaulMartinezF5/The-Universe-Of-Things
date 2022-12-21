@@ -1,7 +1,6 @@
 <script setup>
 import HeroPaginationVue from '../components/HeroPagination.vue'
 import HeroCardVue from '../components/HeroCard.vue';
-import HeroFileVue from '../components/HeroFile.vue';
 import { favouritesList } from '../stores/favouritesList';
 </script>
 
@@ -14,9 +13,8 @@ import { favouritesList } from '../stores/favouritesList';
           :powerstats="favourite.powerstats"/>
       </ul>
     </section>
-    <HeroPaginationVue></HeroPaginationVue>
+    <!-- <HeroPaginationVue></HeroPaginationVue> -->
   </main>
-  <HeroFileVue></HeroFileVue>
 </template>
 
 <style scoped>
@@ -38,12 +36,29 @@ ul {
   gap: 25px;
   list-style: none;
 }
-
 @media (max-width:900px) {
   ul {
     grid-template-columns: 1fr 1fr 1fr;
-
   }
 
 }
+
+@media (max-width:700px) {
+  ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}@media (max-width:500px) {
+  ul {
+    grid-template-columns: 1fr;
+    
+  }
+  section {
+  padding: 0;
+}
+
+}
+
+
+
 </style>

@@ -31,7 +31,7 @@ const getHeroes = async () => {
         :heroe="heroe"></HeroCardVue>
       </ul>
     </section>
-    <HeroPaginationVue></HeroPaginationVue>
+    <!-- <HeroPaginationVue></HeroPaginationVue> -->
 
   </main>
 </template>
@@ -59,8 +59,23 @@ ul {
 @media (max-width:900px) {
   ul {
     grid-template-columns: 1fr 1fr 1fr;
-
   }
+
+}
+
+@media (max-width:700px) {
+  ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}@media (max-width:500px) {
+  ul {
+    grid-template-columns: 1fr;
+    
+  }
+  section {
+  padding: 0;
+}
 
 }
 </style>

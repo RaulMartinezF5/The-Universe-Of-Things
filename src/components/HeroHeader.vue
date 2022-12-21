@@ -27,4 +27,12 @@ header img {
   width: 28%;
   margin: 8px 0 0 53px;
 }
+
+@media (max-width:500px) {
+  header img {
+  width: 28%;
+  margin: 8px 0 0 10px;
+}
+
+}
 </style>
